@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Les base de l'animate en JQUERY & Background</title>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <style type="text/css">
+      body{background:#009ee0;}
+      #contenu{margin:0 auto;width:797px;}
+      #cadre{width:797px;height:459px;background:url('images/fond.png');position:relative;overflow:hidden}
+      #soleil{position:absolute;top:10px;left:30px;}
+      #nuage1{position:absolute;top:80px;left:-200px;z-index:1;}
+      #nuage2{position:absolute;top:100px;left:-200px;z-index:2;}
+      #fish1{position:absolute;bottom:20px;right:-200px;z-index:3;}
+      #fish2{position:absolute;bottom:80px;left:-200px;z-index:4;}
+      #ile{position:absolute;bottom:200px;left:0px;z-index:6;}
+    </style>
+
+  </head>
+
+  <body>
+    <div id="contenu">
+      <div id="cadre">
+        <img id="soleil" src="images/sun.png"/>
+        <img id="nuage1" src="images/nuage1.png"/>
+        <div id="nuage2"><img src="images/nuage2.png"/></div>
+        <div id="fish1"><img src="images/fish1.png"/></div>
+        <div id="fish2"><img src="images/fish2.png"/></div>
+        <div id="ile"><img src="images/vert1.png"/></div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    setTimeout(animation(),1000);
+  });
+
+  function animation(){
+    nuage1();
+    nuage2();
+    ile();
+    fish1();
+    fish2();
+  }
+
+  function nuage1(){
+    $("#nuage1").animate({left:"1150px"},5000).animate({left:"-200px"},0)
+    setTimeout("nuage1()",1000);
+  }
+
+  function nuage2(){
+    $("#nuage2").animate({left:"1150px"},20000).animate({left:"-200px"},0)
+    setTimeout("nuage2()",1000);
+  }
+
+  function ile(){
+    $("#ile").animate({left:"1000px"},30000).animate({left:"0px"},0)
+    setTimeout("ile()",1000);
+  }
+
+  function fish1(){
+    $("#fish1").animate({right:"1150px"},20000).animate({right:"-200px"},0)
+    setTimeout("fish1()",1000);
+  }
+
+  function fish2(){
+    $("#fish2").animate({left:"1150px"},30000).animate({left:"-200px"},0)
+    setTimeout("fish2()",1000);
+  }
+  </script>
+
+</html>
